@@ -1,0 +1,279 @@
+<!-- Copyright (c) Matthew Wolff. All rights reserved. -->
+<THEME>
+	<VIEW id= "mainview0" height ="560" width="999" zindex="1"
+		titleBar="false"
+		alphaBlend="100" backgroundColor="#061119"
+		scriptFile="script.js" 
+		ontimer="JScript:pToggle_Enact_butts(player.playstate);"
+		timerInterval="999"
+		OnMouseOut="JScript:PList.visible='false';mainview.0alphaBlendTo(0,300);"
+		cursor="dr1p4.ani"
+		onload="JScript:initfx();"
+		onkeydown="JScript:spuink(event.keyCode);"
+		OnMouseOut="JScript:PList.visible='false';"
+	>
+	<STATUSTEXT id="dbg" visible="false" zindex="5" left="0" top ="0" width="600" height="48"
+		fontSize="12" fontFace="continuum light" justification= "left"
+		scrolling="false" scrollingAmount="0" scrollingDelay ="0" ontimer=""
+		foregroundColor="#7040ff" backgroundColor="#aa9911" 
+		value="wmpprop:VOLUMESLIDER.accKeyboardShortcut"
+		onclick="(dbg.value=event.button);"
+		onkeyup="(dbg.value=event.keyCode);"
+		onmouseover="JScript:plyhv.alphaBlendTo(10,300);STATUSTEXT.alphaBlendTo(150,300);"
+		onmouseout="JScript:STATUSTEXT.alphaBlendTo(50,300);"
+		alphaBlend="50"
+	/>
+
+	<subVIEW id="mainview00" left="341" top="350" height ="99" width="112" zindex="8"
+		alphaBlend="100" backgroundColor="none" 
+		OnMouseOut="JScript:PList.visible='false';"
+		onmouseover="JScript:plyhv.alphaBlendTo(1,300);"
+	></SUBVIEW>
+
+	<subVIEW id= "mainview01" height ="550" width="999" zindex="2"
+		alphaBlend="100" backgroundColor="none" transparencyColor="#061119"
+		OnMouseOut="JScript:PList.visible='false';"
+	>
+		<EFFECTS id="myeffects" zindex="2" top="166" left ="90" width="600" height="400" tabStop="false"
+			allowall="true"
+			alphaBlend="100"
+			visible="false"
+			currentEffect.backgroundColor="#061119" currentEffect.foregroundColor="#7700ff"
+			backgroundColor="#061119" transparencyColor="#061119"
+			currentEffect.Color="#7700ff" passThrough="true"
+			currentPreset='10'
+			verticalAlignment="stretch" horizontalAlignment="stretch"
+			onmousedown="next();"
+			onclick="next();"
+	/></SUBVIEW>
+
+	<subVIEW id= "mainview01" zindex="4"
+		top="383" height ="550"
+		left="691" width="999"
+		alphaBlend="190" backgroundColor="#061119" transparencyColor="#061119"
+		OnMouseOut="JScript:PList.visible='false';"
+	>
+		<VOLUMESLIDER id="VOLUMESLIDER" toolTip="wmpprop:player.settings.volume" tabStop="False" downToolTip="" ToolTip="" 
+			alphaBlend="170"
+			top="0" height="79" backgroundColor="none" transparencyColor="none"
+			left="0"
+			min="0" max="100"
+			tiled="false" slide="false" direction="horizontal"
+			thumbImage="thumb.bmp" thumbHoverImage="thumb.png" thumbDownImage="thumbpressed.bmp"
+			positionImage="slidermap.bmp" borderSize="27" clippingColor="#00FF00"
+			backgroundimage="sliderbg.bmp" backgroundhoverimage="sliderbg222.bmp" backgrounddownImage="sliderbg3.bmp" 
+			foregroundimage="sliderreveal2.bmp" foregroundColor="none"
+			cursor="hand.cur"
+			onmousedown="JScript:VOLUMESLIDER.alphaBlendTo(255,352);VOLUMESLIDER.backgroundhoverimage='sliderbg3.bmp';VOLUMESLIDER.foregroundimage='sliderreveal2.bmp';"
+			onmouseup="JScript:VOLUMESLIDER.alphaBlendTo(180,300);VOLUMESLIDER.backgroundhoverimage='sliderbg222.bmp';VOLUMESLIDER.foregroundimage='sliderreveal2.bmp';"
+			value="wmpprop:player.settings.volume"
+			value_onchange="player.settings.volume=value; player.settings.mute=false;"
+		/>
+	</SUBVIEW>
+	<SUBVIEW id="CoverSouthEast" zindex="7" passThrough="true"
+		left="540" width="125"
+		top="372" height="67"
+		backgroundColor="none" alphaBlend="255"
+		cursor="dr1p4.ani"
+	></SUBVIEW>
+
+<SUBVIEW id="mainview" zindex="4" height="441" width="889"	backgroundColor="none"	transparencyColor="#061119" 
+	ontimer="JScript:currentget(media);"
+	timerInterval="999"
+>
+	<BUTTON id="BPl" sticky="false" tabStop="false" zindex="6"
+		left="351" width="112"
+		top="350" height="121"
+		mappingImage="mapmap2.bmp"
+		clippingColor="#ffffff" mappingColor ="#00FF00"
+		image="stopped2.bmp" 
+		transparencyColor="#061119" backgroundColor="#061119" 
+		alphaBlend="255"
+		cursor="dr1p4.ani"
+		onmouseover="JScript:plyhv.alphaBlendTo(255,230);PList.visible='true';BPl.top='351';plyhv.top='351';"
+		OnMouseOut="JScript:plyhv.alphaBlendTo(1,300);plyhv.alphaBlendTo(1,300);BPl.top='350';plyhv.top='350';"
+		onmousedown="JScript:plyhv.alphaBlendTo(10,100);"
+		onmouseup="JScript:if(gaay==false) plyhv.alphaBlendTo(0, 300);else plyhv.alphaBlendTo(255,170);"
+		onclick="JScript:if(player.playstate==10) player.controls.play();Playtoggle(player.playstate);"
+	/>
+		<SUBVIEW id="plyhv" zindex="7" alphaBlend="0" passThrough="true" tabStop="false"
+			left="341" top="350"
+			width="112" height="121"
+			Onmouseover="JScript:plyhv.alphaBlendTo(254,300);"
+			OnMouseOut="JScript:plyhv.alphaBlendTo(1,300);plyhv.alphaBlendTo(1,300);"
+		></SUBVIEW>	
+		<SUBVIEW id="plynew" zindex="9" alphaBlend="0" passThrough="true" tabStop="false"
+			left="250" top="350"
+			width="290" height="121"
+			backgroundimage="playingc2.bmp"
+			onendalphablend="JScript:plynew.alphaBlendTo(1,470);"
+		></SUBVIEW>
+
+	<BUTTON id="bRew" zindex="7" sticky="false" tabStop="false" ToolTip="" downToolTip=""
+		left="250"  backgroundColor="#061119" 
+		top="372" 
+		mappingImage="rewmap.bmp" clippingColor="#ffffff" mappingColor ="#00FF00" transparencyColor="#061119"
+		image="rew.bmp"
+		hoverImage="rewh.bmp" disabledimage="rewd.bmp"
+		cursor="spinn4.ani"
+		downImage="rewc.bmp"
+		alphaBlend="100"
+		visible="true"
+		onmouseover="JScript:rewhv.alphaBlendTo(255, 300);PList.visible='true';gaay=false;"
+		OnMouseOut="JScript:rewhv.alphaBlendTo(0, 300);"
+		onmousedown="JScript:rewhv.alphaBlendTo(50, 80);gaay='true';"
+		onmouseup="JScript:if(gaay==false) rewhv.alphaBlendTo(0, 300);else rewhv.alphaBlendTo(255, 120);"
+		onclick="JScript:player.controls.previous();"
+		enabled="wmpenabled:player.controls.previous"
+	/>
+		<SUBVIEW id ="rewhv" zindex="7" alphaBlend="100" backgroundColor="#061119" passThrough="true"
+			left="241" width="117" 
+			top="362" height="67"
+			backgroundimage="rewh.png" 
+			OnMouseOut="JScript:PList.visible='false';"
+			onmouseover="JScript:PList.visible='true';"
+		></SUBVIEW>
+
+	<BUTTON id="bffd" sticky="false" zindex="7" alphaBlend="255"
+		left="448" width="98"
+		top="372" height="49"
+		tabStop="false"
+		mappingImage="mapff.bmp" mappingColor="#00FF00" transparencyColor= "#061119"
+		clippingColor="#ffffff"
+		image="ff.bmp" hoverImage="ffh.bmp" downImage="ffc.bmp" disabledimage="ffd.bmp"
+		cursor="flicker.ani"
+		ToolTip="" downToolTip=""
+		enabled="wmpenabled:player.controls.next"
+		onmouseover="JScript:ffdhv.alphaBlendTo(255, 300);PList.visible='true';"
+		OnMouseOut="JScript:ffdhv.alphaBlendTo(0, 300);"
+		onmousedown="JScript:ffdhv.alphaBlendTo(50, 80);"
+		onmouseup="JScript:if(gaay==false) rewhv.alphaBlendTo(0, 300);else rewhv.alphaBlendTo(255, 120);"
+		onclick="JScript:player.controls.next();" 
+	/>
+		<SUBVIEW id="ffdhv" zindex="7" left="437" top="362" height="67" width="117"
+			backgroundimage="ffh.png" backgroundColor="none" alphaBlend="0"
+			passThrough="true"
+		></SUBVIEW> 
+
+	<SUBVIEW id="plyhv2" zindex="7" alphaBlend="0" passThrough="true"
+		left="155" width="460" 
+		backgroundColor="#ff1119" transparencyColor="#ff1119"
+		top="228" height="220"
+		OnMouseOut="JScript:PList.visible=true;plyhv.alphaBlendTo(1,300);"
+		onmouseover="JScript:PList.visible=true;plyhv.alphaBlendTo(1,300);"
+	>
+		<PLAYLIST id="PList" zindex="-2" alphaBlend="0" backgroundColor="#061119" transparencyColor="#061119"
+			top="0" height="112"
+			left="0" width="460"
+			allowItemEditing="true" justification="right"
+			itemErrorColor="#1a0066"
+			visible="true"
+			visible_onchange="	plyhv.alphablendto(0,300);"
+			itemPlayingColor="#88ffff" itemPlayingBackgroundColor="#4411aa" 
+			itemSelectedFocusLostColor="#bb33ff" itemSelectedBackgroundFocusLostColor ="#003366"
+			columns="name=Title;artist=Artist;Duration=Duration"
+			Duration.columnResizeMode ="Fixed"
+			columnResizeMode ="Fixed" 
+			Duration.columnWidth="100" Duration.columnWidth="20" name.columnWidth="100"
+			itemMedia_onchange="JScript:PList.visible='true';"
+			columnsVisible="false" dropdownVisible="false" editButtonVisible="false"
+		/>
+	</SUBVIEW>
+
+	<TEXT id="scrolltxt" zindex="5" left="96" top ="340" width="590" height="32"
+		fontSize="11" fontFace="Querround" justification="left"
+		scrolling="True" scrollingAmount="1" scrollingDelay ="2" 
+		foregroundColor="#7040ff" backgroundColor="none" 
+		onmouseover="JScript:PList.visible='true';"
+		value_onchange="JScript:PList.visible='true';plynew.alphaBlendto(255,330);"
+	/>
+
+	<BUTTON id="nxt_" sticky="false" zindex="9" tabStop="false"
+		left="210" width="32"
+		top="366" height="64"
+		backgroundimage="nxt2.bmp"
+		mappingImage="nxt_map.bmp" clippingColor="#ffffff"
+		ToolTip="wmpprop:myeffects.currentEffectTitle"
+		image="nxt1.bmp" hoverImage="nxt2.bmp" downImage="nxt3.bmp"
+		transparencyColor="#061119"
+		onmouseover="JScript:nxt_.alphaBlendTo(255,550);PList.visible='true';"
+		onmousedown="JScript:nxt_.alphaBlendTo(25, 100);"
+		onmouseup="JScript:nxt_.alphaBlendTo(255, 170);"
+		OnMouseOut="JScript:nxt_.alphaBlendTo(25, 300);"
+		onClick="JScript:myeffects.next();" 
+		cursor="hand.cur" 
+	/>
+
+	<BUTTON id="prv_" zindex="9" sticky="false" tabStop="false" ToolTip=""
+		left="180" width="32"
+		top="366" height="64"
+		mappingImage="prv_map.bmp"
+		image="prv1.bmp" hoverImage="Prv2.bmp" downImage="prv3.bmp"
+		clippingColor="#ffffff" transparencyColor="#061119"
+		onmouseover="JScript:prv_.alphaBlendTo(255,550);PList.visible='true';"
+		onmousedown="JScript:prv_.alphaBlendTo(50, 100);"
+		onmouseup="JScript:prv_.alphaBlendTo(255, 170);"
+		OnMouseOut="JScript:prv_.alphaBlendTo(50, 300);"
+		onClick="JScript:myeffects.previous();" 
+		cursor="hand.cur"
+	/>
+
+	<SUBVIEW top="378" zindex="9"
+		left="553" clippingColor = "#CCCC00"
+		backgroundimage="ud.png">
+		<BUTTONGROUP
+			buttonCount="2"
+			hoverimage="ud2.bmp" mappingImage="udmap.bmp"
+			width="18" height="36" 
+			cursor="hand.cur" showBackground="true"
+		>
+		<BUTTONELEMENT
+			mappingColor="#ff0000"
+			upToolTip="Next visualization"
+			onClick="JScript:myeffects.next();"
+		/>
+		<BUTTONELEMENT
+			mappingColor="#00FF00"
+			upToolTip="Previous visualization"
+			onClick="JScript:myeffects.previous();"
+		/>
+		</BUTTONGROUP>
+	</SUBVIEW>
+
+	</SUBVIEW>
+		<SUBVIEW id="Cover" zindex="10" passThrough="true"
+		left="0" width="600"
+		top="444" height="2"
+		visible="true"
+		alphaBlend="255"
+		cursor="dr1p4.ani"
+	></SUBVIEW>
+
+	<SUBVIEW id="plyhv3" zindex="3" alphaBlend="255"
+		left="0" width="515" 
+		top="420" height="64"
+		backgroundcolor="none"
+		OnMouseOut="JScript:PList.visible=true;plyhv.alphaBlendTo(1,300);"
+		onmouseover="JScript:PList.visible=true;plyhv.alphaBlendTo(1,300);"
+	>
+		<SUBVIEW id="plyhv4" zindex="7" alphaBlend="254"
+			left="210" width="515" backgroundcolor="none"
+			top="1" height="64"
+			backgroundimage="waveoverlay.bmp" image="waveoverlay.bmp" 
+		>
+		</SUBVIEW>
+	</SUBVIEW>
+
+	<SUBVIEW id="clock" zindex="11" alphaBlend="255" 
+			left="370" width="90"
+			top="431" height="42"
+	>
+			<CURRENTPOSITIONTEXT zindex="10" left="0" top="0" width="590" height="42"
+				fontSize="10" fontFace="continuum medium" justification="middle"
+				scrolling="false"  
+				foregroundColor="#330090"
+				value="wmpprop:player.controls.currentPositionString"
+			/>
+	</SUBVIEW>
+	</VIEW>
+</THEME>
