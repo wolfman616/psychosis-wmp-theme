@@ -2,11 +2,11 @@
 <THEME>
 	<VIEW id= "mainview0" height ="560" width="999" zindex="1"
 		titleBar="false"
-		alphaBlend="200" backgroundColor="#061119"
+		alphaBlend="255" backgroundColor="#000000"
 		scriptFile="script.js" 
 		ontimer="JScript:pToggle_Enact_butts(player.playstate);"
 		timerInterval="999"
-		OnMouseOut="JScript:PList.visible='false';mainview.0alphaBlendTo(0,300);"
+		OnMouseOut="JScript:PList.visible='false';"
 		cursor="dr1p4.ani"
 		onload="JScript:initfx();"
 		onkeydown="JScript:spuink(event.keyCode);"
@@ -15,7 +15,7 @@
 	<STATUSTEXT id="dbg" visible="false" zindex="5" left="0" top ="0" width="600" height="48"
 		fontSize="12" fontFace="continuum light" justification= "left"
 		scrolling="false" scrollingAmount="0" scrollingDelay ="0" ontimer=""
-		foregroundColor="#7040ff" backgroundColor="#aa9911" 
+		foregroundColor="#7040ff" backgroundColor="#000000" 
 		value="wmpprop:VOLUMESLIDER.accKeyboardShortcut"
 		onclick="(dbg.value=event.button);"
 		onkeyup="(dbg.value=event.keyCode);"
@@ -25,34 +25,34 @@
 	/>
 
 	<subVIEW id="mainview00" left="341" top="350" height ="99" width="112" zindex="8"
-		alphaBlend="100" backgroundColor="#061119" 
+		alphaBlend="255" backgroundColor="#000000" 
 		OnMouseOut="JScript:PList.visible='false';" visible="false"
 		onmouseover="JScript:plyhv.alphaBlendTo(1,300);"
 	></SUBVIEW>
 
-	<subVIEW id= "mainview01" height ="550" width="999" zindex="2"
-		alphaBlend="100" backgroundColor="#061119" transparencyColor="#061119"
+	<subVIEW id= "mainview02" height ="550" width="999" zindex="5"
 		OnMouseOut="JScript:PList.visible='false';"
-		visible="true"
+		visible="true"	alphaBlend="100"
 	>
-		<EFFECTS id="myeffects" zindex="2" top="166" left ="90" width="600" height="400" tabStop="false"
-			allowall="true"
+		<EFFECTS id="myeffects" zindex="7" top="166" left ="95" width="590" height="400" tabStop="false"
+			allowall="true"  backgroundColor="#000000" 
 			alphaBlend="100"
 			visible="true"
-			currentEffect.backgroundColor="#061119" currentEffect.foregroundColor="#7700ff"
-			backgroundColor="#061119" transparencyColor="#061119"
+			currentEffect.backgroundColor="#000001" 
+			currentEffect.foregroundColor="#7700ff"
 			currentEffect.Color="#7700ff" passThrough="true"
 			currentPreset='10'
+
 			verticalAlignment="stretch" horizontalAlignment="stretch"
 			onmousedown="next();"
 			onclick="next();"
 		/>
 	</SUBVIEW>
 
-	<subVIEW id= "mainview01" zindex="4"
+	<subVIEW id= "mainview011" zindex="8"
 		top="383" height ="550"
 		left="691" width="999"
-		alphaBlend="190" backgroundColor="#061119" transparencyColor="#061119"
+		alphaBlend="255"
 		OnMouseOut="JScript:PList.visible='false';"
 	>
 		<VOLUMESLIDER id="VOLUMESLIDER" toolTip="wmpprop:player.settings.volume" tabStop="False" downToolTip="" ToolTip="" 
@@ -79,18 +79,15 @@
 		backgroundColor="none" alphaBlend="255"
 	></SUBVIEW>
 
-	<SUBVIEW id="mainview" zindex="4" backgroundColor="none" transparencyColor="#061119" 
+	<SUBVIEW id="mainview" zindex="5" 
 		ontimer="JScript:currentget(media);" timerInterval="999"
 		width="889"
 		height="441"
 	>
-	<BUTTON id="BPl" sticky="false" tabStop="false" zindex="6"
+	<BUTTON id="BPl" sticky="false" tabStop="false" zindex="11"
 		left="351" width="112"
 		top="350" height="121"
-		mappingImage="mapmap2.bmp"
-		clippingColor="#ffffff" mappingColor ="#00FF00"
-		image="stopped2.bmp" 
-		transparencyColor="#061119" backgroundColor="#061119" 
+		image="playing2.png" 
 		alphaBlend="255"
 		cursor="dr1p4.ani"
 		onmouseover="JScript:plyhv.alphaBlendTo(255,230);PList.visible='true';BPl.top='351';plyhv.top='351';"
@@ -99,9 +96,9 @@
 		onmouseup="JScript:if(gaay==false) plyhv.alphaBlendTo(0, 300);else plyhv.alphaBlendTo(255,170);"
 		onclick="JScript:mainview0.timerInterval='999';if(player.playstate==10) player.controls.play();Playtoggle(player.playstate);"
 	/>
-		<SUBVIEW id="plyhv" zindex="7" alphaBlend="0" passThrough="true" tabStop="false"
+		<SUBVIEW id="plyhv" zindex="7" alphaBlend="255" passThrough="true" tabStop="false"
 			left="341" top="350"
-			width="112" height="121"
+	width="112" height="121"
 			Onmouseover="JScript:plyhv.alphaBlendTo(254,300);"
 			OnMouseOut="JScript:plyhv.alphaBlendTo(1,300);plyhv.alphaBlendTo(1,300);"
 		></SUBVIEW>	
@@ -109,16 +106,17 @@
 		<SUBVIEW id="plynew" zindex="9" alphaBlend="0" passThrough="true" tabStop="false"
 			left="250" top="350"
 			width="290" height="121"
-			backgroundimage="playingc2.bmp"
+						backgroundimage="playingc2.bmp"
+
 			onendalphablend="JScript:plynew.alphaBlendTo(1,470);"
 		></SUBVIEW>
 
 	<BUTTON id="bRew" zindex="7" sticky="false" tabStop="false" ToolTip="" downToolTip=""
-		left="250"  backgroundColor="#061119" 
+		left="250"
 		top="372" 
-		mappingImage="rewmap.bmp" clippingColor="#ffffff" mappingColor ="#00FF00" transparencyColor="#061119"
-		image="rew.bmp"
-		hoverImage="rewh.bmp" disabledimage="rewd.bmp"
+		mappingImage="rewmap.bmp" clippingColor="#ffffff" mappingColor ="#00FF00"
+		image="rew.png"
+		 disabledimage="rewd.bmp"
 		cursor="spinn4.ani"
 		downImage="rewc.bmp"
 		visible="true"
@@ -129,7 +127,7 @@
 		onclick="JScript:player.controls.previous();"
 		enabled="wmpenabled:player.controls.previous"
 	/>
-		<SUBVIEW id ="rewhv" zindex="7" alphaBlend="0" backgroundColor="#061119" passThrough="true"
+		<SUBVIEW id ="rewhv" zindex="7" alphaBlend="0" backgroundColor="#000000" passThrough="true"
 			left="241" width="117" 
 			top="362" height="67"
 			backgroundimage="rewh.png" 
@@ -141,9 +139,9 @@
 		left="448" width="98"
 		top="372" height="49"
 		tabStop="false"
-		mappingImage="mapff.bmp" mappingColor="#00FF00" transparencyColor= "#061119"
+		mappingImage="mapff.bmp" mappingColor="#00FF00"
 		clippingColor="#ffffff"
-		image="ff.bmp" hoverImage="ffh.bmp" downImage="ffc.bmp" disabledimage="ffd.bmp"
+		image="ff.png" hoverImage="ffh.bmp" downImage="ffc.bmp" disabledimage="ffd.bmp"
 		cursor="flicker.ani"
 		ToolTip="" downToolTip=""
 		enabled="wmpenabled:player.controls.next"
@@ -165,7 +163,7 @@
 		OnMouseOut="JScript:PList.visible=true;plyhv.alphaBlendTo(1,300);"
 		onmouseover="JScript:PList.visible=true;plyhv.alphaBlendTo(1,300);"
 	>
-		<PLAYLIST id="PList" zindex="-2" alphaBlend="0" backgroundColor="#061119" transparencyColor="#061119"
+		<PLAYLIST id="PList" zindex="-2" alphaBlend="0" backgroundColor="#000000" transparencyColor="#000000"
 			top="0" height="112"
 			left="0" width="460"
 			allowItemEditing="true" justification="right"
@@ -194,14 +192,14 @@
 		top="366" height="64"
 		backgroundimage="nxt2.bmp"
 		mappingImage="nxt_map.bmp" clippingColor="#ffffff"
-		ToolTip="wmpprop:myeffects.currentEffectTitle"
+		ToolTip="wmpprop:km.currentEffectTitle"
 		image="nxt1.bmp" hoverImage="nxt2.bmp" downImage="nxt3.bmp"
 		transparencyColor="#061119"
 		onmouseover="JScript:nxt_.alphaBlendTo(255,550);PList.visible='true';"
 		onmousedown="JScript:nxt_.alphaBlendTo(25, 100);"
 		onmouseup="JScript:nxt_.alphaBlendTo(255, 170);"
 		OnMouseOut="JScript:nxt_.alphaBlendTo(25, 300);"
-		onClick="JScript:mainview0.timerInterval='0';myeffects.next();myeffects.currentEffect.backgroundColor='#061119';" 
+		onClick="JScript:mainview0.timerInterval='0';myeffects.next();myeffects.currentEffect.backgroundColor='#ff0000';" 
 		cursor="hand.cur" 
 	/>
 
@@ -215,11 +213,11 @@
 		onmousedown="JScript:prv_.alphaBlendTo(50, 100);"
 		onmouseup="JScript:prv_.alphaBlendTo(255, 170);"
 		OnMouseOut="JScript:prv_.alphaBlendTo(50, 300);"
-		onClick="JScript:mainview0.timerInterval='0';myeffects.previous();myeffects.currentEffect.backgroundColor='#061119';" 
+		onClick="JScript:mainview0.timerInterval='0';myeffects.previous();myeffects.currentEffect.backgroundColor='#000000';" 
 		cursor="hand.cur"
 	/>
 
-	<SUBVIEW top="378" zindex="9"
+	<SUBVIEW top="378" zindex="10"
 		left="553" clippingColor = "#CCCC00"
 		backgroundimage="ud.png">
 		<BUTTONGROUP
@@ -250,7 +248,7 @@
 		cursor="dr1p4.ani"
 	></SUBVIEW>
 
-	<SUBVIEW id="plyhv3" zindex="3" alphaBlend="255"
+	<SUBVIEW id="plyhv3" zindex="10" alphaBlend="255"
 		left="0" width="515" 
 		top="420" height="64"
 		backgroundcolor="none"

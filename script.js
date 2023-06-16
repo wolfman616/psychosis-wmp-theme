@@ -4,10 +4,7 @@ var init=false;
 var media="player";
 
 function flippreset(alpha) {
-	if(alpha=="255")
-		plyhv2.alphaBlendTo(0, 600);
-	else if(alpha=="0")
-		plyhv2.alphaBlendTo(255, 600);
+
 }
 
 function currentget(media) {
@@ -63,24 +60,24 @@ function pToggle_Enact_butts(inputvsr) {
 	 else if(init==true)
 		initfx();
 	if(inputvsr=="1") {
-		BPl.image="stopped2.bmp";  BPl.downImage="stopped2c.bmp"; plyhv.backgroundimage="stopped2h.bmp";
+		BPl.image="stopped2.png";  BPl.downImage="stopped2c.png"; plyhv.backgroundimage="stopped2h.bmp";
 		 scrolltxt.foregroundColor="#7040ff"; PList.foregroundColor="#7040ff";
-		BPl.cursor="flicker.ani"; myeffects.visible=false;
+		BPl.cursor="flicker.ani";
 		BPl.onclick="JScript:Playtoggle(player.playstate);";
 	} else if(inputvsr=="2") {
-		BPl.image="stopped2.bmp";  BPl.downImage="stopped2c.bmp";  plyhv.backgroundimage="stopped2h.bmp";
+		BPl.image="stopped2.png";  BPl.downImage="stopped2c.png";  plyhv.backgroundimage="stopped2h.bmp";
 		scrolltxt.foregroundColor="#7040ff"; PList.foregroundColor="#7040ff";
-		BPl.cursor="flicker.ani"; myeffects.visible=false;
+		BPl.cursor="flicker.ani";
 	} else if(inputvsr=="3") {
-		BPl.image="playing2.bmp"; BPl.downImage="playingc.bmp";
+		BPl.image="playing2.png"; BPl.downImage="playingc.png";
 		scrolltxt.foregroundColor="#6693d9";
 		plyhv.backgroundimage="playing2h.png";
-		BPl.cursor="dr1p4.ani"; myeffects.visible=true;
+		BPl.cursor="dr1p4.ani"; myeffects.alphaBlendTo(100,250);
 		PList.foregroundColor="#6693d9";
 		if(myeffects.cycling=="true")
 			myeffects.previous();
 	} else if(inputvsr=="10") {
-		BPl.image="stopped2.bmp"; BPl.downImage="stopped2c.bmp";
+		BPl.image="stopped2.png"; BPl.downImage="stopped2c.png";
 		scrolltxt.foregroundColor="#7040ff";
 		plyhv.backgroundimage="stopped2h.bmp";
 		PList.foregroundColor="#7040ff";
@@ -89,9 +86,10 @@ function pToggle_Enact_butts(inputvsr) {
 	}
 	mainview0.timerInterval="999";
 	scrolltxt.value=player.currentMedia.name;
-	myeffects.currentEffect.backgroundColor="#061119";
+	myeffects.currentEffect.backgroundColor="#7700ff";
 	myeffects.currentEffect.foregroundColor="#7700ff";
 	myeffects.currentEffect.Color="#7700ff";
+	myeffects.backgroundColor="#7700ff";
 }
 
 // SIG // Begin signature block

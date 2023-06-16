@@ -20,8 +20,8 @@ on4Gnd(hook4g,event4g,hWnd) { ; initated from taskbar or minimize restore alt ta
 	4gnd_hWnd:= ("ahk_id " . hWnd)
 	wingetClass,Class,%			4gnd_hWnd
 	switch,Class {
-		case,"WMP Skin Host" : winset,transparent,off,ahk_id %hWnd%
-			winset,transcolor,%WMPSkin_tCol% 252,ahk_id %hWnd%
+		case,"WMP Skin Host" : VarSetCapacity(rect0,16,0xff)
+				DllCall("dwmapi\DwmExtendFrameIntoClientArea","uint",lParam,"uint",&rect0)
 	}
 }
 
